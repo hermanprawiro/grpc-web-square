@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service Calculator {
+    rpc SquareNumber(SingleRequest) returns (SingleReply) {}
+    rpc CubeNumber(SingleRequest) returns (SingleReply) {}
+    rpc AddNumber(DoubleRequest) returns (SingleReply) {}
+}
+
+message SingleRequest {
+    int32 number = 1;
+}
+
+message DoubleRequest {
+    int32 first_number = 1;
+    int32 second_number = 2;
+}
+
+message SingleReply {
+    int32 result = 1;
+}
